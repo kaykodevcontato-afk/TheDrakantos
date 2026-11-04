@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Lora:wght@400;500;600&display=swap');
+
+:root {
+    --ouro: #d6ad58;
+    --ouro-claro: #f4d995;
+    --fundo: #100e0c;
+    --painel: #1d1914;
+    --texto: #e9dfcc;
+    --vermelho: #722c28;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(ellipse at top, #382719 0%, transparent 55%),
+        var(--fundo);
+    color: var(--texto);
+    font-family: 'Lora', serif;
+    line-height: 1.8;
+    min-height: 100vh;
+}
+
+/* MENU MEDIEVAL */
+
+.menu {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px;
+    background: rgba(12, 10, 8, 0.96);
+    border-bottom: 2px solid var(--ouro);
+    box-shadow: 0 5px 25px #000;
+}
+
+.menu a {
+    color: var(--texto);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    padding: 9px 16px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: var(--ouro-claro);
+    border-color: var(--ouro);
+    background: rgba(214, 173, 88, 0.10);
+    text-shadow: 0 0 10px var(--ouro);
+}
+
+/* TITULOS */
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--ouro);
+    text-align: center;
+    text-shadow: 0 3px 12px #000;
+}
+
+h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin: 35px 0;
+}
+
+h2 {
+    font-size: 25px;
+    margin: 35px 0 20px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 2px;
+    background: var(--ouro);
+    margin: 12px auto;
+}
+
+/* PAGINA INICIAL */
+
+header {
+    padding: 90px 20px;
+    text-align: center;
+    background: linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.85)
+    );
+    border-bottom: 1px solid #80602e;
+}
+
+header p {
+    max-width: 850px;
+    margin: auto;
+    font-size: 18px;
+}
+
+section, main {
+    width: min(1100px, 92%);
+    margin: 45px auto;
+}
+
+section {
+    background: rgba(29, 25, 20, 0.85);
+    border: 1px solid #58452b;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px #0008;
+}
+
+p {
+    margin: 18px 0;
+    text-align: justify;
+}
+
+/* IMAGENS */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 7px;
+}
+
+section img {
+    border: 1px solid #98733b;
+    box-shadow: 0 5px 20px #000;
+}
+
+/* VIDEOS */
+
+video, iframe {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    margin: 25px auto;
+    border: 2px solid #98733b;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px #000;
+}
+
+.video_container,
+.Video_container {
+    width: 100%;
+    max-width: 850px;
+    aspect-ratio: 16 / 9;
+    margin: 25px auto;
+}
+
+.video_container iframe,
+.Video_container iframe {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* LISTAS */
+
+ul {
+    padding-left: 30px;
+}
+
+li {
+    margin: 12px 0;
+}
+
+li::marker {
+    color: var(--ouro);
+}
+
+/* PAGINA SOBRE */
+
+.sobre {
+    background: var(--painel);
+    border: 1px solid #80602e;
+    padding: 35px;
+    border-radius: 8px;
+}
+
+/* GALERIA DE HEROIS */
+
+.herois-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+.heroi-card {
+    background: linear-gradient(145deg, #30251a, #15110d);
+    border: 1px solid #80602e;
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.heroi-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--ouro-claro);
+    box-shadow: 0 0 25px #d6ad5833;
+}
+
+.heroi-card p {
+    color: var(--ouro-claro);
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.heroi-card img {
+    max-height: 240px;
+    object-fit: contain;
+}
+
+/* ANIMAÇÕES */
+
+.revelar {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.revelar.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+    .menu {
+        gap: 3px;
+        padding: 10px;
+    }
+
+    .menu a {
+        font-size: 11px;
+        padding: 7px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    header {
+        padding: 55px 15px;
+    }
+
+    .herois-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
